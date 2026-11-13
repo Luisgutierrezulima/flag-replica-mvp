@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLAG (réplica MVP): Fatty Liver Awareness Game</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- 4.1 Pantalla de bienvenida -->
+    <section class="screen" data-screen="welcome">
+      <div class="welcome">
+        <div class="welcome-left">
+          <span class="chip" id="chip-mode">Réplica MVP</span>
+          <h1>Misión:<br>Hígado Sano</h1>
+          <p class="lead">Bienvenido, cadete. Tu misión es aprender a proteger tu hígado y escalar en el ranking.</p>
+          <button class="btn primary" id="btn-start">Iniciar juego</button>
+          <button class="btn secondary" id="btn-room">Jugar en la sala</button>
+          <div class="row-small">
+            <button class="btn ghost small" id="btn-how">Cómo jugar</button>
+          </div>
+          <p class="slogan">¡HÍGADO FELIZ Y SANO!</p>
+        </div>
+        <aside class="welcome-right">
+          <h2>Top 3 mejores puntajes</h2>
+          <ol id="leaderboard" class="board"></ol>
+          <div class="mascot" aria-hidden="true">🫀</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 4.2 Pantalla previa -->
+    <section class="screen" data-screen="pregame" hidden>
+      <div class="panel">
+        <h2>Prepara tu misión</h2>
+        <label for="inp-name">Tu nombre de soldado</label>
+        <input id="inp-name" maxlength="14" placeholder="Ej. FRANKLIN" autocomplete="off">
+        <div id="room-field" hidden>
+          <label for="inp-room">Código de sala</label>
+          <input id="inp-room" maxlength="10" placeholder="Ej. CLASE1" autocomplete="off">
+        </div>
+        <p class="muted">Elige la dificultad. Fácil da 45 segundos por pregunta. Intermedio da 20 segundos.</p>
+        <div class="row">
+          <button class="btn primary" data-level="facil">Jugar fácil</button>
+          <button class="btn secondary" data-level="intermedio">Jugar intermedio</button>
+        </div>
+        <div class="row">
+          <button class="btn ghost" id="btn-intro">Introducción</button>
+          <button class="btn ghost" id="btn-back-welcome">Volver</button>
+        </div>
+        <p class="error" id="pregame-error" role="alert"></p>
+      </div>
+    </section>
+
+    <!-- 4.3 Pantalla de pregunta -->
+    <section class="screen" data-screen="question" hidden>
+      <header class="hud">
+        <span><i class="dot green"></i><span id="hud-q">Pregunta 1 de 10</span></span>
+        <span><i class="dot orange"></i>Puntos: <b id="hud-points">0</b></span>
+        <span>Sala: <b id="hud-room" class="blue">General</b></span>
+        <span><i class="dot white"></i><b id="hud-timer">00:45</b></span>
+      </header>
+      <div class="panel">
+        <h2 id="q-text"></h2>
+        <ul id="q-options" class="options" role="radiogroup" aria-label="Opciones de respuesta"></ul>
+        <div class="row">
+          <button class="btn primary" id="btn-answer" disabled>Responder a la misión</button>
+          <button class="btn outline" id="btn-end">Terminar misión</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.4 Retroalimentación -->
+    <section class="screen" data-screen="feedback" hidden>
+      <header class="hud">
+        <span id="fb-q"></span>
+        <span>Puntos: <b id="fb-points">0</b></span>
+        <span>Sala: <b id="fb-room" class="blue"></b></span>
+        <span id="fb-timer"></span>
+      </header>
+      <div class="panel feedback" id="fb-panel">
+        <h2 id="fb-title"></h2>
+        <p id="fb-body"></p>
+        <p class="concept" id="fb-concept"></p>
+        <button class="btn primary" id="btn-next">Continuar</button>
+      </div>
+    </section>
+
+    <!-- 4.5 Minijuego: recolector de comida saludable -->
+    <section class="screen" data-screen="minigame" hidden>
+      <header class="hud">
+        <span>Minijuego: Recolector saludable</span>
+        <span>Puntos: <b id="mg-points">0</b></span>
+        <span><i class="dot white"></i><b id="mg-timer">00:00</b></span>
+      </header>
+      <div class="panel">
+        <p class="muted">Guía al corazón de izquierda a derecha. Recoge comida saludable y esquiva hamburguesas, papas, donas y cerveza. Usa las flechas arriba y abajo, o los botones.</p>
+        <canvas id="mg-canvas" width="720" height="300" aria-label="Pista del minijuego"></canvas>
+        <div class="row">
+          <button class="btn secondary" id="mg-up">▲ Subir</button>
+          <button class="btn secondary" id="mg-down">▼ Bajar</button>
+          <button class="btn primary" id="mg-finish" hidden>TERMINAR Y CONTINUAR</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.6 Pantallas finales -->
+    <section class="screen" data-screen="end" hidden>
+      <div class="panel center">
+        <h2 id="end-title">¡Misión completada!</h2>
+        <p class="soldier" id="end-name"></p>
+        <p class="big">Puntaje total acumulado: <b id="end-score">0</b> puntos</p>
+        <table class="summary">
+          <tr><th>✔ Correctas</th><th>✘ Errores</th><th>Sin responder</th></tr>
+          <tr><td id="end-ok">0</td><td id="end-err">0</td><td id="end-un">0</td></tr>
+        </table>
+        <p class="muted" id="end-breakdown"></p>
+        <div class="achievement">
+          <h3>¡Logro desbloqueado!</h3>
+          <p><b id="ach-title"></b>: <span id="ach-text"></span></p>
+        </div>
+        <div class="row">
+          <button class="btn primary" id="btn-home">Volver al inicio</button>
+          <button class="btn secondary" id="btn-review">Revisar preguntas</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="report" hidden>
+      <div class="panel">
+        <h2>Reporte de resultados</h2>
+        <ol id="report-list" class="report"></ol>
+        <button class="btn primary" id="btn-report-back">Volver</button>
+      </div>
+    </section>
+
+    <!-- Ventana de ayuda -->
+    <dialog id="dlg">
+      <h3 id="dlg-title"></h3>
+      <p id="dlg-body"></p>
+      <button class="btn primary" id="dlg-close">Entendido</button>
+    </dialog>
+
+    <footer class="foot">Réplica MVP del juego FLAG (Parrales-Bravo et al., 2026, Multimodal Technologies and Interaction 10(5), 48). Contenido educativo de demostración, no sustituye consejo médico.</footer>
+  </main>
+
+  <script src="js/logic.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
