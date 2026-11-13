@@ -32,7 +32,7 @@
       concept: 'Las bebidas azucaradas aportan mucha azúcar líquida, que el hígado convierte en grasa con facilidad.'
     },
     {
-      id: 'Q04', room: 'General', source: 'reconstruida',
+      id: 'Q04', room: 'General', source: 'reconstruida', core: true, topic: 'fisiopatologia',
       text: '¿Cuál es uno de los mayores desafíos para detectar a tiempo el hígado graso?',
       options: ['Siempre produce un dolor muy fuerte', 'Suele no dar síntomas en las etapas tempranas', 'Solo aparece en personas mayores de 60 años', 'Se ve a simple vista en la piel'],
       correct: 1,
@@ -81,7 +81,7 @@
       concept: 'La OMS recomienda para adultos entre 150 y 300 minutos semanales de actividad aeróbica de intensidad moderada, o su equivalente vigorosa.'
     },
     {
-      id: 'Q11', room: 'General', source: 'reconstruida',
+      id: 'Q11', room: 'General', source: 'reconstruida', core: true, topic: 'prevencion',
       text: 'Una persona con hígado graso en etapa temprana mejora su dieta y hace ejercicio. ¿Qué puede pasar?',
       options: ['La grasa del hígado puede disminuir', 'El hígado se daña más rápido', 'No cambia nada, es irreversible', 'Aparece diabetes de inmediato'],
       correct: 0,
@@ -93,6 +93,27 @@
       options: ['Cirrosis (cicatrización del hígado)', 'Pérdida de cabello', 'Mala visión nocturna', 'Pie plano'],
       correct: 0,
       concept: 'Si la inflamación persiste, el hígado puede cicatrizar (fibrosis) y llegar a cirrosis, una etapa avanzada.'
+    },
+    {
+      id: 'Q13', room: 'General', source: 'reconstruida', core: true, topic: 'epidemiologia',
+      text: 'Si miras a 10 adultos en el mundo, ¿en cuántos se estima que hay hígado graso?',
+      options: ['En 1 de cada 100', 'En unos 3 de cada 10', 'En 9 de cada 10', 'En ninguno si no toman alcohol'],
+      correct: 1,
+      concept: 'Se estima que cerca del 30 % de la población adulta mundial tiene hígado graso, y la cifra va en aumento.'
+    },
+    {
+      id: 'Q14', room: 'Actividad física', source: 'reconstruida', core: true, topic: 'riesgo',
+      text: 'Un programador pasa más de 8 horas sentado y a menudo se salta el desayuno o pica de madrugada. ¿Qué pasa con su riesgo de hígado graso?',
+      options: ['Disminuye, porque descansa más', 'No cambia, depende solo de la genética', 'Aumenta con el sedentarismo y las comidas irregulares', 'Solo aumenta si usa pantallas con luz azul'],
+      correct: 2,
+      concept: 'Pasar muchas horas sentado y tener horarios de comida irregulares se asocia con mayor riesgo de hígado graso.'
+    },
+    {
+      id: 'Q15', room: 'General', source: 'reconstruida', core: true, topic: 'consecuencias',
+      text: '¿Cuál es la principal causa de muerte en las personas con hígado graso?',
+      options: ['Accidentes de tránsito', 'Enfermedades cardiovasculares', 'Infecciones respiratorias', 'Alergias graves'],
+      correct: 1,
+      concept: 'Las enfermedades cardiovasculares son la principal causa de muerte en personas con hígado graso. También hay mayor riesgo de complicaciones del hígado.'
     }
   ];
   return { QUESTIONS: QUESTIONS };

@@ -47,8 +47,8 @@ Las pruebas cubren la lógica pura (`js/logic.js`): armado de ronda, tiempos por
 3. **Puntaje.** El artículo muestra "+1 punto" por acierto y un total de 94 puntos con 9 aciertos, lo que implica otros componentes no publicados. Aquí el total es aciertos más puntos del minijuego (comida saludable suma 1 y comida dañina resta 1, con mínimo 0).
 4. **Posición del minijuego.** Aparece como pausa tras la pregunta 5.
 5. **Logros.** Solo "Hígado de Acero" para 9 aciertos está publicado. Los otros dos títulos son propios.
-6. **Banco de preguntas.** El artículo no publica el banco de 10 preguntas. Hay 12 preguntas en `js/data.js`. Cada una lleva el campo `source`: `publicada` si el artículo publica el enunciado (solo la pregunta de la caminata de 30 minutos) y `reconstruida` si se redactó para esta réplica. En dos de ellas el artículo solo publica la respuesta correcta o el concepto (transaminasas ALT y AST, y bebida azucarada).
-7. **Test pre/post.** Las 5 preguntas del Apéndice A del artículo no se usaron en el juego, para no mezclar material de práctica con el instrumento de evaluación.
+6. **Banco de preguntas.** El artículo no publica el banco de 10 preguntas. Hay 15 preguntas en `js/data.js`. Cinco son "núcleo" (una por cada tema del test del artículo: epidemiología, riesgo, fisiopatología, prevención y consecuencias) y entran siempre en la ronda de 10. Las otras cinco se sortean. Cada una lleva el campo `source`: `publicada` si el artículo publica el enunciado (solo la pregunta de la caminata de 30 minutos) y `reconstruida` si se redactó para esta réplica. En dos de ellas el artículo solo publica la respuesta correcta o el concepto (transaminasas ALT y AST, y bebida azucarada).
+7. **Test pre/post.** Las 5 preguntas del Apéndice A del artículo no se usaron en el juego, para no mezclar material de práctica con el instrumento de evaluación. Se usan como test antes y después en el piloto (carpeta `piloto/` de la entrega).
 8. **Idioma.** Interfaz en español. Las capturas del artículo están traducidas al inglés.
 9. **Aspecto visual.** Tema oscuro con botones azul y morado, inspirado en las figuras del artículo. No es una copia gráfica.
 

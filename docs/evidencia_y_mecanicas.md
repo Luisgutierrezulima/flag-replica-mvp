@@ -26,6 +26,10 @@ Este documento explica cómo se pasó de la información clínica a las mecánic
 | F3 | Organización Mundial de la Salud. 2020 guidelines on physical activity and sedentary behaviour. British Journal of Sports Medicine 2020, 54(24), 1451. https://pmc.ncbi.nlm.nih.gov/articles/PMC7719906 |
 | F4 | Consumption of Sugar-Sweetened Beverages Has a Dose-Dependent Effect on the Risk of Non-Alcoholic Fatty Liver Disease. Int J Environ Res Public Health 2019, 16(12), 2192. doi 10.3390/ijerph16122192. RR agrupado 1,39 (IC 95 %: 1,29 a 1,50) |
 | F5 | AASLD. Steatotic-What? Changes in Fatty Liver Nomenclature (Liver Fellow Network, clinical pearls). https://www.aasld.org/liver-fellow-network/core-series/clinical-pearls/steatotic-what-changes-fatty-liver-nomenclature |
+| F7 | Younossi ZM et al. (2023). The global epidemiology of nonalcoholic fatty liver disease (NAFLD) and nonalcoholic steatohepatitis (NASH): a systematic review. Hepatology. PMID 36626630. Prevalencia global del 30 % (resumen leído) |
+| F8 | Daily sedentary behavior exceeding 5 hours is independently associated with MAFLD: a cross-sectional study from NHANES 2017-2020. PMC13664251 (texto leído) |
+| F9 | Murag S et al. (2021). Recent Epidemiology of Nonalcoholic Fatty Liver Disease. Gut and Liver. La enfermedad cardiovascular es la principal causa de mortalidad en NAFLD (fragmento leído) |
+| F10 | Revisión sistemática sobre ritmos circadianos y MASLD (eClinicalMedicine, 2026). Saltar el desayuno y picar de noche se asocian con mayor MASLD incidente (fragmento leído) |
 | F6 | Parrales-Bravo et al. (2026). FLAG. Multimodal Technologies and Interaction, 10(5), 48. doi 10.3390/mti10050048 (diseño del juego, sección 4) |
 
 ## Trazabilidad de las preguntas
@@ -43,6 +47,9 @@ Este documento explica cómo se pasó de la información clínica a las mecánic
 | Q09 alcohol | Hay una categoría aparte (MetALD) para quien suma alcohol por encima del umbral | F1 | Parcial. La frase "daña directamente" no se verificó |
 | Q10 150 a 300 min | Adultos: 150 a 300 min de actividad moderada por semana o su equivalente vigorosa | F3 | Verificada |
 | Q11 reversibilidad | La actividad física reduce la esteatosis y una pérdida de cerca del 5 % del peso reduce la grasa del hígado | F2 | Verificada |
+| Q13 prevalencia de 3 de cada 10 | Prevalencia global cercana al 30 % | F7 | Verificada |
+| Q14 sentado y comidas irregulares | Más de 5 h diarias sentado se asocia con MAFLD. Saltar el desayuno y picar de noche se asocian con MASLD | F8, F10 | Verificada como asociación, no causalidad |
+| Q15 causa de muerte | Las enfermedades cardiovasculares son la principal causa de muerte en NAFLD | F9 | Verificada en fragmento. Falta abrir el texto completo |
 | Q12 cirrosis | La progresión a fibrosis y cirrosis | Sin fuente abierta en esta sesión | Pendiente de fuente |
 
 ## Límites

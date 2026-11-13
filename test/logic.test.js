@@ -3,15 +3,15 @@ const assert = require('node:assert/strict');
 const L = require('../js/logic.js');
 const bank = require('../js/data.js').QUESTIONS;
 
-test('el banco tiene 12 preguntas con 4 opciones y una correcta valida', () => {
-  assert.equal(bank.length, 12);
+test('el banco tiene 15 preguntas con 4 opciones y una correcta valida', () => {
+  assert.equal(bank.length, 15);
   for (const q of bank) {
     assert.equal(q.options.length, 4, q.id);
     assert.ok(q.correct >= 0 && q.correct < 4, q.id);
     assert.ok(q.concept.length > 10, q.id);
     assert.ok(['publicada', 'reconstruida'].includes(q.source), q.id);
   }
-  assert.equal(new Set(bank.map(q => q.id)).size, 12);
+  assert.equal(new Set(bank.map(q => q.id)).size, 15);
 });
 
 test('buildRound devuelve 10 preguntas distintas y conserva la opcion correcta', () => {
@@ -78,4 +78,17 @@ test('colision: solo en el mismo carril y cerca en x; puntaje minimo 0', () => {
   assert.equal(L.applyItem(0, { healthy: false }), 0);
   assert.equal(L.applyItem(3, { healthy: false }), 2);
   assert.equal(L.applyItem(3, { healthy: true }), 4);
+});
+
+test('buildRound incluye siempre las 5 preguntas nucleo (una por tema del test)', () => {
+  const core = bank.filter(q => q.core).map(q => q.id);
+  assert.equal(core.length, 5);
+  assert.deepEqual([...new Set(bank.filter(q => q.core).map(q => q.topic))].sort(),
+    ['consecuencias', 'epidemiologia', 'fisiopatologia', 'prevencion', 'riesgo']);
+  for (let seed = 1; seed <= 50; seed++) {
+    const ids = L.buildRound(bank, L.mulberry32(seed)).map(q => q.id);
+    assert.equal(ids.length, 10);
+    assert.equal(new Set(ids).size, 10);
+    core.forEach(id => assert.ok(ids.includes(id), 'semilla ' + seed + ' sin ' + id));
+  }
 });

@@ -26,10 +26,14 @@
     return a;
   }
 
-  /* Una ronda: 10 preguntas del banco, en orden aleatorio y con opciones barajadas. */
+  /* Una ronda: 10 preguntas. Las preguntas "core" (una por tema del test del articulo)
+     entran siempre. El resto se completa al azar. Orden y opciones barajados. */
   function buildRound(bank, rng, n) {
     const size = n || 10;
-    return shuffle(bank, rng).slice(0, size).map(function (q) {
+    const core = bank.filter(function (q) { return q.core; });
+    const rest = shuffle(bank.filter(function (q) { return !q.core; }), rng);
+    const picked = shuffle(core.concat(rest.slice(0, Math.max(0, size - core.length))), rng);
+    return picked.map(function (q) {
       const idx = shuffle([0, 1, 2, 3], rng);
       return {
         id: q.id, room: q.room, text: q.text, concept: q.concept, source: q.source,
