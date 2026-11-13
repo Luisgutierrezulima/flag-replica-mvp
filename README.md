@@ -65,5 +65,5 @@ js/logic.js       lógica pura (probada con Node)
 js/data.js        banco de preguntas
 js/app.js         interfaz, temporizador y minijuego
 test/             pruebas
-docs/             diapositiva del workflow (PNG)
+docs/             workflow (PNG), capturas del juego y evidencia_y_mecanicas.md (fuentes y trazabilidad)
 ```

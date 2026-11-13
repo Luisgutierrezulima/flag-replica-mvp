@@ -22,7 +22,7 @@
       text: 'Tu médico quiere saber si el hígado está inflamado o dañado. ¿Qué examen de sangre se usa?',
       options: ['Hemograma completo', 'Pruebas de función hepática (transaminasas ALT y AST)', 'Prueba de tolerancia a la lactosa', 'Examen de orina de rutina'],
       correct: 1,
-      concept: 'Las transaminasas ALT y AST forman parte de las pruebas de función hepática y suben cuando hay daño en las células del hígado.'
+      concept: 'Las transaminasas ALT y AST forman parte de las pruebas de función hepática y suelen subir cuando hay daño en las células del hígado. Un valor normal no descarta la enfermedad.'
     },
     {
       id: 'Q03', room: 'Alimentación', source: 'reconstruida',
@@ -43,14 +43,14 @@
       text: '¿Qué significa la sigla NAFLD o EHGNA?',
       options: ['Infección viral del hígado', 'Enfermedad del hígado graso no alcohólico', 'Inflamación de la vesícula', 'Falta de enzimas digestivas'],
       correct: 1,
-      concept: 'Es la acumulación de grasa en el hígado en personas que no consumen alcohol en exceso.'
+      concept: 'Es la acumulación de grasa en el hígado en personas que no consumen alcohol en exceso. Desde 2023 el término de consenso es MASLD (enfermedad hepática esteatósica asociada a disfunción metabólica).'
     },
     {
       id: 'Q06', room: 'Actividad física', source: 'reconstruida',
       text: 'Pasas 8 horas sentado programando. ¿Qué pequeño hábito ayuda más?',
       options: ['Quedarte sentado hasta terminar el trabajo', 'Levantarte y moverte unos minutos cada hora', 'Saltarte el almuerzo', 'Beber solo bebidas energéticas'],
       correct: 1,
-      concept: 'Interrumpir el tiempo sentado con pausas activas cortas ayuda al control de la glucosa y reduce el riesgo metabólico.'
+      concept: 'Interrumpir el tiempo sentado con pausas activas cortas ayuda al control de la glucosa y reduce el riesgo metabólico. La OMS aconseja limitar el tiempo sedentario y reemplazarlo por actividad de cualquier intensidad.'
     },
     {
       id: 'Q07', room: 'Alimentación', source: 'reconstruida',
@@ -78,14 +78,14 @@
       text: 'Según la OMS, ¿cuánta actividad física semanal se recomienda a un adulto?',
       options: ['Unos 30 minutos en total', 'Al menos 150 minutos de actividad de intensidad moderada', 'Solo los fines de semana, 2 horas', 'No hay ninguna recomendación'],
       correct: 1,
-      concept: 'La OMS recomienda entre 150 y 300 minutos semanales de actividad aeróbica moderada para adultos.'
+      concept: 'La OMS recomienda para adultos entre 150 y 300 minutos semanales de actividad aeróbica de intensidad moderada, o su equivalente vigorosa.'
     },
     {
       id: 'Q11', room: 'General', source: 'reconstruida',
       text: 'Una persona con hígado graso en etapa temprana mejora su dieta y hace ejercicio. ¿Qué puede pasar?',
       options: ['La grasa del hígado puede disminuir', 'El hígado se daña más rápido', 'No cambia nada, es irreversible', 'Aparece diabetes de inmediato'],
       correct: 0,
-      concept: 'En etapas tempranas la acumulación de grasa puede reducirse con cambios de dieta y actividad física.'
+      concept: 'En etapas tempranas la grasa del hígado puede reducirse con dieta y actividad física. Perder cerca del 5 % del peso ya ayuda a reducirla.'
     },
     {
       id: 'Q12', room: 'General', source: 'reconstruida',
