@@ -6,7 +6,11 @@ Réplica mínima del juego serio **FLAG: Fatty Liver Awareness Game**, descrito 
 
 Trabajo de la semana 13 del curso Proyecto de Investigación (Universidad de Lima). Esta réplica no es el código original. El artículo no enlaza el código fuente. Cita el prototipo web original en https://franklinparrales.es/SGHigado/ (consultado por los autores el 26-ene-2026). Aquí se reconstruyó el juego a partir de la descripción de la sección 4 del artículo.
 
-## Cómo ejecutarlo
+## Jugar en línea
+
+https://luisgutierrezulima.github.io/flag-replica-mvp/
+
+## Cómo ejecutarlo en tu equipo
 
 Es HTML5, CSS3 y JavaScript sin dependencias ni compilación, igual que el original.
 
